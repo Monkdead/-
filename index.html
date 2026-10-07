@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA SPA | Премиальный спа-салон и массаж в Москве</title>
+  <meta name="description" content="Премиальные массажные и SPA-программы в Москве для глубокого восстановления тела и ума. Расслабляющая атмосфера отеля 5 звёзд, опытные мастера, натуральные масла.">
+  
+  <!-- SEO Keywords and OpenGraph -->
+  <meta property="og:title" content="AURA SPA | Глубокое восстановление и массаж">
+  <meta property="og:description" content="Премиальный спа-салон и массажные программы для отдыха тела, снятия напряжения и восстановления баланса.">
+  <meta property="og:image" content="images/hero_spa.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond (Serif, Elegant) and Montserrat (Sans-serif, Clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#" class="logo-group" aria-label="AURA SPA главная">
+        <span class="logo-main">AURA SPA</span>
+        <span class="logo-sub">wellness & massage</span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Основная навигация">
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#atmosphere">Атмосфера</a></li>
+          <li><a href="#masters">Мастера</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-primary open-booking" aria-haspopup="dialog">Записаться</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-controls="navMenu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero Block -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-label-group">
+            <span class="hero-label">ПРЕМИАЛЬНОЕ SPA-ПРОСТРАНСТВО</span>
+            <span class="hero-label-line"></span>
+          </div>
+          <h1 class="hero-title">SPA-пространство <br class="hero-br">для&nbsp;восстановления <br class="hero-br">тела&nbsp;и&nbsp;баланса</h1>
+          <p class="hero-subtitle">Массажные&nbsp;и&nbsp;SPA-программы для&nbsp;снятия напряжения, глубокого отдыха&nbsp;и&nbsp;возвращения внутреннего&nbsp;баланса</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary open-booking">Записаться на сеанс</button>
+            <a href="#services" class="btn btn-secondary">Смотреть услуги</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-container">
+            <img src="images/hero_spa.png" alt="Премиальный массажный кабинет с теплым светом и свечами" class="hero-img">
+            <div class="floating-badge">
+              <span class="badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <span class="badge-text">Персональные программы от 60 минут</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Advantages -->
+    <section class="advantages-section" id="advantages">
+      <div class="container advantages-container">
+        <!-- Header for mobile (hidden on desktop) -->
+        <div class="advantages-header mobile-only">
+          <span class="advantages-tag">Искусство заботы</span>
+          <h2 class="advantages-title">Почему гости возвращаются в AURA SPA</h2>
+          <p class="advantages-subtitle">Мы соединяем профессиональные массажные техники, атмосферу уединения и персональный подход, чтобы каждый визит ощущался как полноценное восстановление.</p>
+        </div>
+
+        <!-- Left Side: Large Vertical Image -->
+        <div class="advantages-image-wrapper">
+          <img src="images/atmosphere_4.png" alt="Профессиональный массаж с натуральными маслами в теплой расслабляющей атмосфере AURA SPA" class="advantages-img" loading="lazy">
+        </div>
+        
+        <!-- Right Side: Content & Advantages List -->
+        <div class="advantages-content-wrapper">
+          <!-- Header for desktop (hidden on mobile) -->
+          <div class="advantages-header desktop-only">
+            <span class="advantages-tag">Искусство заботы</span>
+            <h2 class="advantages-title">Почему гости возвращаются в AURA SPA</h2>
+            <p class="advantages-subtitle">Мы соединяем профессиональные массажные техники, атмосферу уединения и персональный подход, чтобы каждый визит ощущался как полноценное восстановление.</p>
+          </div>
+          
+          <div class="advantages-list">
+            <!-- Item 1 -->
+            <div class="advantage-list-item">
+              <span class="advantage-num">01</span>
+              <div class="advantage-text">
+                <h3 class="advantage-title">Опытные мастера</h3>
+                <p class="advantage-desc">Мастера с опытом от 5 лет подбирают технику под ваше состояние, уровень напряжения и желаемый результат.</p>
+              </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="advantage-list-item">
+              <span class="advantage-num">02</span>
+              <div class="advantage-text">
+                <h3 class="advantage-title">Персональные программы</h3>
+                <p class="advantage-desc">Каждая процедура адаптируется под ваши ощущения: от мягкого релакса до глубокой проработки мышц.</p>
+              </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="advantage-list-item">
+              <span class="advantage-num">03</span>
+              <div class="advantage-text">
+                <h3 class="advantage-title">Натуральные масла</h3>
+                <p class="advantage-desc">Используем сертифицированные масла и ароматы с мягкими композициями без резких химических отдушек.</p>
+              </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="advantage-list-item">
+              <span class="advantage-num">04</span>
+              <div class="advantage-text">
+                <h3 class="advantage-title">Атмосфера уединения</h3>
+                <p class="advantage-desc">Тёплый свет, тишина, мягкий текстиль и спокойные детали помогают телу быстрее расслабиться.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header align-center">
+          <span class="section-tag">Каталог услуг</span>
+          <h2 class="section-title">Ритуалы красоты и здоровья</h2>
+          <p class="section-subtitle">Выберите идеальную программу для снятия стресса, восстановления сил или спа-ухода.</p>
+        </div>
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_relax.png" alt="Процедура расслабляющего массажа тела" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Расслабляющий массаж</h3>
+              <p class="service-desc">Мягкие плавные техники для снятия мышечного тонуса, улучшения лимфотока и глубокой перезагрузки нервной системы.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">60 / 90 мин</span>
+                  <span class="service-price">от 4 500 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="relax">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_body.png" alt="Спа программа для тела с массажными камнями" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">SPA-программа для тела</h3>
+              <p class="service-desc">Комплексный уход за кожей: деликатное очищение скрабом на выбор, питательное обертывание и увлажняющий массаж.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">90 мин</span>
+                  <span class="service-price">6 000 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="body">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_antistress.png" alt="Антистресс массаж шейно-воротниковой зоны" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Антистресс массаж</h3>
+              <p class="service-desc">Проработка триггерных зон в области шеи, плеч и головы, направленная на мгновенное снятие усталости и головных болей.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">60 мин</span>
+                  <span class="service-price">4 200 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="antistress">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_back.png" alt="Глубокий массаж спины и шеи" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Массаж спины и шеи</h3>
+              <p class="service-desc">Интенсивная терапия для позвоночника. Избавляет от зажимов, мышечных болей и чувства скованности после сидячей работы.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">60 мин</span>
+                  <span class="service-price">4 000 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="back">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_aroma.png" alt="Сеанс ароматерапии с эфирными маслами" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Ароматерапия</h3>
+              <p class="service-desc">Массаж с использованием теплых эфирных масел редких растений, подобранных под ваше текущее психоэмоциональное состояние.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">75 мин</span>
+                  <span class="service-price">5 000 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="aroma">Подробнее</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="service-card">
+            <div class="service-img-wrapper">
+              <img src="images/service_pair.png" alt="Парная спа программа для двоих в уютном кабинете" class="service-img" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Парная SPA-программа для двоих</h3>
+              <p class="service-desc">Синхронный массаж в уединенном люкс-кабинете со свечами, легким парением в кедровой бочке и чайным ритуалом.</p>
+              <div class="service-footer">
+                <div class="service-info">
+                  <span class="service-duration">120 мин</span>
+                  <span class="service-price">12 000 ₽</span>
+                </div>
+                <button class="btn-text open-service-detail" data-service="pair">Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Atmosphere Gallery Section -->
+    <section class="atmosphere-section" id="atmosphere">
+      <div class="container">
+        <div class="atmosphere-text-container">
+          <span class="section-tag">Пространство</span>
+          <h2 class="atmosphere-text-main">
+            «Мы создали пространство, где можно замедлиться, восстановиться и почувствовать искреннюю заботу о себе»
+          </h2>
+        </div>
+        <div class="atmosphere-gallery">
+          <!-- Gallery Item 1 -->
+          <div class="gallery-item" data-index="0">
+            <img src="images/atmosphere_1.png" alt="Интерьер ресепшн-зоны в стиле дорогого минимализма" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="gallery-item" data-index="1">
+            <img src="images/atmosphere_2.png" alt="Горящие свечи, аромадиффузор и мягкие полотенца в кабинете" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="gallery-item" data-index="2">
+            <img src="images/atmosphere_3.png" alt="Массажный стол готовый к спа процедурам с декором из бамбука" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="gallery-item" data-index="3">
+            <img src="images/atmosphere_4.png" alt="Стекающее теплое золотистое массажное масло на ладонь терапевта" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Popular Programs (Цены) -->
+    <section class="programs-section" id="prices">
+      <div class="container">
+        <div class="section-header align-center">
+          <span class="section-tag">Бестселлеры</span>
+          <h2 class="section-title">Популярные SPA-программы</h2>
+          <p class="section-subtitle">Готовые комплексные ритуалы, заслужившие наибольшее признание наших гостей.</p>
+        </div>
+        <div class="programs-grid">
+          <!-- Program 1 -->
+          <div class="program-card">
+            <div class="program-img-wrapper">
+              <img src="images/atmosphere_2.png" alt="Программа Антистресс" class="program-img" loading="lazy">
+              <div class="program-badge">90 минут</div>
+            </div>
+            <div class="program-body">
+              <h3 class="program-name">«Антистресс»</h3>
+              <p class="program-desc">Гармонизирующий массаж всего тела с лавандовым маслом, расслабляющий массаж лица, ароматерапия и авторская чайная церемония.</p>
+              <div class="program-footer">
+                <span class="program-price">5 500 ₽</span>
+                <button class="btn btn-primary open-booking" data-service="«Антистресс» (90 мин)">Записаться</button>
+              </div>
+            </div>
+          </div>
+          <!-- Program 2 -->
+          <div class="program-card">
+            <div class="program-img-wrapper">
+              <img src="images/atmosphere_3.png" alt="Программа Глубокое восстановление" class="program-img" loading="lazy">
+              <div class="program-badge">120 минут</div>
+            </div>
+            <div class="program-body">
+              <h3 class="program-name">«Глубокое восстановление»</h3>
+              <p class="program-desc">Тонизирующий массаж мышц, деликатный кокосовый пилинг всего тела, тепловое обертывание и регенерирующий уход за лицом.</p>
+              <div class="program-footer">
+                <span class="program-price">7 500 ₽</span>
+                <button class="btn btn-primary open-booking" data-service="«Глубокое восстановление» (120 мин)">Записаться</button>
+              </div>
+            </div>
+          </div>
+          <!-- Program 3 -->
+          <div class="program-card">
+            <div class="program-img-wrapper">
+              <img src="images/service_pair.png" alt="Программа SPA для двоих" class="program-img" loading="lazy">
+              <div class="program-badge">120 минут</div>
+            </div>
+            <div class="program-body">
+              <h3 class="program-name">«SPA для двоих»</h3>
+              <p class="program-desc">Романтический ритуал в уединенном сьюте: синхронный релакс-массаж, нежное распаривание в хаммаме и совместное чаепитие с фруктами.</p>
+              <div class="program-footer">
+                <span class="program-price">14 000 ₽</span>
+                <button class="btn btn-primary open-booking" data-service="«SPA для двоих» (120 мин)">Записаться</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Masters Section -->
+    <section class="masters-section" id="masters">
+      <div class="container">
+        <div class="section-header align-center">
+          <span class="section-tag">Наша команда</span>
+          <h2 class="section-title">Мастера гармонии и баланса</h2>
+          <p class="section-subtitle">Сертифицированные специалисты с глубоким пониманием физиологии и душевного спокойствия.</p>
+        </div>
+        <div class="masters-grid">
+          <!-- Master 1 -->
+          <div class="master-card">
+            <div class="master-img-wrapper">
+              <img src="images/master_anna.png" alt="Анна - SPA-терапевт салона AURA SPA" class="master-img" loading="lazy">
+            </div>
+            <div class="master-body">
+              <div class="master-header">
+                <h3 class="master-name">Анна</h3>
+                <span class="master-experience">стаж 7 лет</span>
+              </div>
+              <span class="master-spec">SPA-терапевт, эксперт по телу</span>
+              <p class="master-desc">Специализируется на восточных ритуалах, лимфодренажных программах и моделирующих уходах. Знает, как вернуть коже сияние.</p>
+            </div>
+          </div>
+          <!-- Master 2 -->
+          <div class="master-card">
+            <div class="master-img-wrapper">
+              <img src="images/master_maria.png" alt="Мария - мастер массажа салона AURA SPA" class="master-img" loading="lazy">
+            </div>
+            <div class="master-body">
+              <div class="master-header">
+                <h3 class="master-name">Мария</h3>
+                <span class="master-experience">стаж 9 лет</span>
+              </div>
+              <span class="master-spec">Мастер глубокого массажа</span>
+              <p class="master-desc">Мастерски устраняет глубокие мышечные зажимы, восстанавливает спину после физических нагрузок и сидячей офисной работы.</p>
+            </div>
+          </div>
+          <!-- Master 3 -->
+          <div class="master-card">
+            <div class="master-img-wrapper">
+              <img src="images/master_ekaterina.png" alt="Екатерина - специалист по релакс-программам" class="master-img" loading="lazy">
+            </div>
+            <div class="master-body">
+              <div class="master-header">
+                <h3 class="master-name">Екатерина</h3>
+                <span class="master-experience">стаж 6 лет</span>
+              </div>
+              <span class="master-spec">Специалист по релакс-программам</span>
+              <p class="master-desc">Тонко чувствует пожелания гостя. Специалист по аромамассажу, антистресс-техникам и мягким уходам для лица.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Reviews Section -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header align-center">
+          <span class="section-tag">Отзывы гостей</span>
+          <h2 class="section-title">Слова благодарности</h2>
+        </div>
+        <div class="reviews-carousel-wrapper">
+          <div class="reviews-carousel" id="reviewsCarousel">
+            <!-- Review 1 -->
+            <div class="review-slide active">
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Очень спокойная атмосфера, после массажа будто заново родилась. Все продумано до мелочей: от температуры массажного стола до вкусного травяного чая после сеанса. Мастер Екатерина — фея с золотыми руками!»</p>
+              <div class="review-author">Елена В.</div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-slide">
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Понравился уровень сервиса и искреннее внимание к деталям. Никакого шума, полная конфиденциальность. Мастер Мария отлично проработала спину и шею после тяжелой командировки. Рекомендую программу "Глубокое восстановление".»</p>
+              <div class="review-author">Александр Д.</div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-slide">
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Лучшее место, чтобы восстановиться после тяжелой рабочей недели. Чудесный аромат масел на ресепшн сразу настраивает на расслабление. Посещали спа для двоих с супругой, остались в полном восторге!»</p>
+              <div class="review-author">Ольга К.</div>
+            </div>
+          </div>
+          <!-- Carousel Dots -->
+          <div class="carousel-dots" id="carouselDots" aria-label="Переключение отзывов">
+            <button class="dot active" data-slide="0" aria-label="Отзыв 1"></button>
+            <button class="dot" data-slide="1" aria-label="Отзыв 2"></button>
+            <button class="dot" data-slide="2" aria-label="Отзыв 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Gift Certificates -->
+    <section class="certificates-section" id="certificates">
+      <div class="container certificates-container">
+        <div class="certificates-content">
+          <span class="section-tag">Особый подарок</span>
+          <h2 class="certificates-title">Подарочный сертификат в AURA SPA</h2>
+          <p class="certificates-text">Подарите близким, коллегам или любимым отдых, профессиональную заботу и бесценные часы полного восстановления сил. Доступны физические сертификаты в дизайнерском золотистом конверте и электронные версии.</p>
+          <div class="certificates-actions">
+            <button class="btn btn-primary" id="openCertModalBtn">Купить сертификат</button>
+          </div>
+        </div>
+        <div class="certificates-image-wrapper">
+          <img src="images/certificate.png" alt="Элегантный подарочный сертификат AURA SPA с атласной лентой в золотом конверте" class="certificate-img" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Section 9: FAQ (Frequently Asked Questions) -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="faq-info">
+          <span class="section-tag">Важно знать</span>
+          <h2 class="faq-title">Частые вопросы перед визитом</h2>
+          <p class="faq-text">Ответили на&nbsp;главные вопросы, чтобы вы&nbsp;могли спокойно выбрать процедуру и&nbsp;записаться в&nbsp;удобное время.</p>
+          
+          <div class="faq-support-card">
+            <p class="faq-support-text">Если остались вопросы — напишите нам в&nbsp;WhatsApp</p>
+            <a href="https://wa.me/79990000000" target="_blank" rel="noopener noreferrer" class="btn btn-secondary faq-support-btn">
+              <span class="btn-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.004 2C6.51 2 2.014 6.5 2.014 12c0 2.13.67 4.11 1.81 5.75L2.03 23l5.44-1.42A9.97 9.97 0 0 0 12.004 22c5.49 0 9.99-4.5 9.99-10S17.5 2 12.004 2zm0 18.3a8.27 8.27 0 0 1-4.22-1.16l-.3-.18-3.14.82.84-3.07-.2-.31a8.26 8.26 0 0 1-1.27-4.4c0-4.57 3.72-8.3 8.3-8.3s8.3 3.73 8.3 8.3-3.73 8.3-8.3 8.3zm4.55-6.2c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8 1-.15.17-.3.19-.55.06A7.03 7.03 0 0 1 9.9 12.44a7.76 7.76 0 0 1-2.07-2.58c-.14-.25-.01-.39.12-.52.11-.11.25-.3.37-.45.12-.15.16-.25.24-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.5-.43-.43-.58-.44h-.5c-.17 0-.45.06-.68.31-.23.25-.89.87-.89 2.12s.9 2.47 1.03 2.63c.13.16 1.77 2.72 4.3 3.8 2.09.9 2.9.98 3.85.84.58-.08 1.47-.6 1.67-1.17.2-.57.2-1.07.14-1.17-.06-.1-.23-.16-.48-.29z"/>
+                </svg>
+              </span>
+              <span>Написать в WhatsApp</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="faq-accordion">
+          <!-- Item 1 (Active by default) -->
+          <div class="faq-item active">
+            <button class="faq-trigger" aria-expanded="true" aria-controls="faq-ans-1">
+              <span class="faq-question">Как выбрать подходящую SPA-программу?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-1" role="region">
+              <div class="faq-content">
+                <p>Если вы&nbsp;не&nbsp;уверены, администратор поможет подобрать программу по&nbsp;вашему состоянию, цели визита и&nbsp;желаемой интенсивности массажа.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2">
+              <span class="faq-question">Нужно&nbsp;ли готовиться к&nbsp;массажу заранее?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-2" role="region">
+              <div class="faq-content">
+                <p>Специальная подготовка не&nbsp;требуется. Рекомендуем прийти за&nbsp;10–15 минут до&nbsp;начала, чтобы спокойно настроиться на&nbsp;процедуру.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3">
+              <span class="faq-question">Можно&nbsp;ли прийти на&nbsp;SPA-программу вдвоём?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-3" role="region">
+              <div class="faq-content">
+                <p>Да, в&nbsp;салоне доступны парные программы для&nbsp;двоих. Лучше записываться заранее, чтобы мы&nbsp;подготовили удобное время и&nbsp;кабинет.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4">
+              <span class="faq-question">Сколько длится сеанс?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-4" role="region">
+              <div class="faq-content">
+                <p>Длительность зависит от&nbsp;выбранной программы. Большинство процедур занимают от&nbsp;60 до&nbsp;120 минут.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-5">
+              <span class="faq-question">Массаж будет болезненным?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-5" role="region">
+              <div class="faq-content">
+                <p>Интенсивность подбирается индивидуально. Мастер заранее уточнит ваши пожелания и&nbsp;будет ориентироваться на&nbsp;ваши ощущения во&nbsp;время процедуры.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-6">
+              <span class="faq-question">Есть&nbsp;ли противопоказания?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-6" role="region">
+              <div class="faq-content">
+                <p>Да, при&nbsp;острых воспалениях, высокой температуре, серьёзных заболеваниях сердца, беременности или&nbsp;других медицинских ограничениях лучше заранее проконсультироваться со&nbsp;специалистом.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-7">
+              <span class="faq-question">Можно&nbsp;ли купить подарочный сертификат?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-7" role="region">
+              <div class="faq-content">
+                <p>Да, вы&nbsp;можете оформить подарочный сертификат на&nbsp;конкретную программу или&nbsp;на&nbsp;выбранную сумму.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-8">
+              <span class="faq-question">Как отменить или&nbsp;перенести запись?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <line class="line-h" x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line class="line-v" x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content-wrapper" id="faq-ans-8" role="region">
+              <div class="faq-content">
+                <p>Свяжитесь с&nbsp;нами заранее по&nbsp;телефону или&nbsp;в&nbsp;мессенджере, и&nbsp;мы&nbsp;подберём для&nbsp;вас другое удобное время.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Final CTA Block -->
+    <section class="cta-section">
+      <div class="cta-backdrop"></div>
+      <div class="container cta-container">
+        <h2 class="cta-title">Позвольте себе восстановиться</h2>
+        <p class="cta-subtitle">Выберите подходящую программу, удобное время и погрузитесь в целебную атмосферу умиротворения и заботы о себе.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary open-booking">Записаться сейчас</button>
+          <a href="https://wa.me/79990000000" target="_blank" rel="noopener noreferrer" class="btn btn-secondary whatsapp-btn">
+            <span class="btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.004 2C6.51 2 2.014 6.5 2.014 12c0 2.13.67 4.11 1.81 5.75L2.03 23l5.44-1.42A9.97 9.97 0 0 0 12.004 22c5.49 0 9.99-4.5 9.99-10S17.5 2 12.004 2zm0 18.3a8.27 8.27 0 0 1-4.22-1.16l-.3-.18-3.14.82.84-3.07-.2-.31a8.26 8.26 0 0 1-1.27-4.4c0-4.57 3.72-8.3 8.3-8.3s8.3 3.73 8.3 8.3-3.73 8.3-8.3 8.3zm4.55-6.2c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8 1-.15.17-.3.19-.55.06A7.03 7.03 0 0 1 9.9 12.44a7.76 7.76 0 0 1-2.07-2.58c-.14-.25-.01-.39.12-.52.11-.11.25-.3.37-.45.12-.15.16-.25.24-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.5-.43-.43-.58-.44h-.5c-.17 0-.45.06-.68.31-.23.25-.89.87-.89 2.12s.9 2.47 1.03 2.63c.13.16 1.77 2.72 4.3 3.8 2.09.9 2.9.98 3.85.84.58-.08 1.47-.6 1.67-1.17.2-.57.2-1.07.14-1.17-.06-.1-.23-.16-.48-.29z"/>
+              </svg>
+            </span>
+            <span>Написать в WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Contacts & Location Map -->
+    <section class="contacts-section" id="contacts">
+      <div class="container">
+        <div class="contacts-wrapper">
+          <!-- Interactive Leaflet Map -->
+          <div class="map-wrapper">
+            <div id="map" class="map-view" aria-label="Карта проезда к AURA SPA"></div>
+            <div class="map-overlay"></div>
+          </div>
+          
+          <!-- Premium Contacts Card floating on top of the map -->
+          <div class="contacts-card">
+            <span class="card-tag">Где нас найти</span>
+            <h2 class="card-title">Контакты</h2>
+            
+            <div class="card-details">
+              <!-- Address -->
+              <div class="card-item">
+                <span class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <div class="card-text">
+                  <h3>Адрес</h3>
+                  <p>г. Москва, ул. Тверская, 15</p>
+                </div>
+              </div>
+              
+              <!-- Phone -->
+              <div class="card-item">
+                <span class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+                <div class="card-text">
+                  <h3>Телефон</h3>
+                  <p><a href="tel:+79990000000">+7 999 000-00-00</a></p>
+                </div>
+              </div>
+
+              <!-- Working Hours -->
+              <div class="card-item">
+                <span class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </span>
+                <div class="card-text">
+                  <h3>Режим работы</h3>
+                  <p>Ежедневно с 10:00 до 22:00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Actions / Buttons -->
+            <div class="card-actions">
+              <a href="https://yandex.ru/maps/?rtext=~55.7601,37.6085" target="_blank" rel="noopener noreferrer" class="btn btn-route">Построить маршрут</a>
+              <a href="https://wa.me/79990000000" target="_blank" rel="noopener noreferrer" class="btn btn-wa-light">Написать в WhatsApp</a>
+            </div>
+            
+            <!-- Socials -->
+            <div class="card-socials">
+              <a href="https://t.me/auraspa" target="_blank" rel="noopener noreferrer" aria-label="Наш Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.24-5.54 3.65-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.76-1.63 6.27-2.7 7.53-3.21 3.58-1.47 4.32-1.73 4.81-1.74.11 0 .35.03.5.16.13.1.17.24.18.35-.01.07.01.21 0 .28z"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/79990000000" target="_blank" rel="noopener noreferrer" aria-label="Наш WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.004 2C6.51 2 2.014 6.5 2.014 12c0 2.13.67 4.11 1.81 5.75L2.03 23l5.44-1.42A9.97 9.97 0 0 0 12.004 22c5.49 0 9.99-4.5 9.99-10S17.5 2 12.004 2zm0 18.3a8.27 8.27 0 0 1-4.22-1.16l-.3-.18-3.14.82.84-3.07-.2-.31a8.26 8.26 0 0 1-1.27-4.4c0-4.57 3.72-8.3 8.3-8.3s8.3 3.73 8.3 8.3-3.73 8.3-8.3 8.3zm4.55-6.2c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.13-.17.25-.65.82-.8 1-.15.17-.3.19-.55.06A7.03 7.03 0 0 1 9.9 12.44a7.76 7.76 0 0 1-2.07-2.58c-.14-.25-.01-.39.12-.52.11-.11.25-.3.37-.45.12-.15.16-.25.24-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.5-.43-.43-.58-.44h-.5c-.17 0-.45.06-.68.31-.23.25-.89.87-.89 2.12s.9 2.47 1.03 2.63c.13.16 1.77 2.72 4.3 3.8 2.09.9 2.9.98 3.85.84.58-.08 1.47-.6 1.67-1.17.2-.57.2-1.07.14-1.17-.06-.1-.23-.16-.48-.29z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">AURA SPA</a>
+        <p class="footer-tagline">Премиальный велнес и глубокое восстановление сил</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#atmosphere">Атмосфера</a></li>
+          <li><a href="#masters">Мастера</a></li>
+          <li><a href="#prices">Тарифы</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 AURA SPA Wellness. Все права защищены.</p>
+        <div class="footer-dev-block">
+          <span>Создание премиальных сайтов:</span>
+          <a href="tel:+79520299644" class="dev-phone">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 1px;">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+7 (952) 029-96-44</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal 1: Online Booking Form -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+      <h2 id="modalTitle" class="modal-header-title">Запись на ритуал</h2>
+      <p class="modal-header-subtitle">Заполните форму, и наш администратор свяжется с вами в течение 10 минут для подтверждения времени.</p>
+      
+      <form id="bookingForm" class="booking-form" novalidate>
+        <!-- Name -->
+        <div class="form-group">
+          <label for="userName">Ваше имя</label>
+          <input type="text" id="userName" name="name" required placeholder="Александра" autocomplete="name">
+          <span class="error-message">Пожалуйста, введите ваше имя</span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="userPhone">Номер телефона</label>
+          <input type="tel" id="userPhone" name="phone" required placeholder="+7 (999) 000-00-00" autocomplete="tel">
+          <span class="error-message">Введите корректный номер телефона</span>
+        </div>
+
+        <!-- Service Select -->
+        <div class="form-group">
+          <label for="bookingService">Выберите программу</label>
+          <select id="bookingService" name="service" required>
+            <option value="" disabled selected>Выберите услугу</option>
+            <option value="relax">Расслабляющий массаж (от 4 500 ₽)</option>
+            <option value="body">SPA-программа для тела (6 000 ₽)</option>
+            <option value="antistress">Антистресс массаж (4 200 ₽)</option>
+            <option value="back">Массаж спины и шеи (4 000 ₽)</option>
+            <option value="aroma">Ароматерапия (5 000 ₽)</option>
+            <option value="pair">SPA-программа для двоих (12/14 000 ₽)</option>
+            <option value="certificate">Покупка подарочного сертификата</option>
+          </select>
+          <span class="error-message">Выберите одну из программ</span>
+        </div>
+
+        <!-- Date & Time Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingDate">Желаемая дата</label>
+            <input type="date" id="bookingDate" name="date" required min="2026-06-12">
+            <span class="error-message">Выберите дату визита</span>
+          </div>
+          <div class="form-group">
+            <label for="bookingTime">Время</label>
+            <select id="bookingTime" name="time" required>
+              <option value="" disabled selected>Время</option>
+              <option value="10:00">10:00</option>
+              <option value="12:00">12:00</option>
+              <option value="14:00">14:00</option>
+              <option value="16:00">16:00</option>
+              <option value="18:00">18:00</option>
+              <option value="20:00">20:00</option>
+            </select>
+            <span class="error-message">Выберите время</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">Записаться на восстановление</button>
+      </form>
+
+      <!-- Success Screen inside Modal -->
+      <div class="success-screen" id="successScreen" aria-hidden="true">
+        <div class="success-icon-wrapper">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="success-title">Спасибо за обращение!</h3>
+        <p class="success-text">Ваш запрос принят. Мы перезвоним вам в ближайшие 10 минут, чтобы согласовать детали и закрепить за вами мастера.</p>
+        <button class="btn btn-primary close-success-btn">Вернуться на сайт</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Gift Certificate Selection & Purchase -->
+  <div class="modal-backdrop" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" aria-hidden="true">
+    <div class="modal-card cert-modal-card">
+      <button class="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+      <h2 id="certModalTitle" class="modal-header-title">Подарочный сертификат</h2>
+      <p class="modal-header-subtitle">Выберите номинал или SPA-программу и оформите доставку в один клик</p>
+      
+      <form id="certificateForm" class="certificate-form" novalidate>
+        <!-- Tab selector: Номинал / Программа -->
+        <div class="cert-tab-wrapper">
+          <button type="button" class="cert-tab active" data-tab="amount">По номиналу</button>
+          <button type="button" class="cert-tab" data-tab="service">На услугу</button>
+        </div>
+
+        <!-- Tab Content 1: Amount Selection -->
+        <div class="cert-tab-content active" id="tab-amount">
+          <label class="form-section-label">Выберите сумму сертификата</label>
+          <div class="cert-grid cert-grid-amount">
+            <div class="cert-option-card active" data-value="5000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-value">5 000 ₽</span>
+              <span class="cert-desc">Номинальный сертификат</span>
+            </div>
+            <div class="cert-option-card" data-value="10000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-value">10 000 ₽</span>
+              <span class="cert-desc">Номинальный сертификат</span>
+            </div>
+            <div class="cert-option-card" data-value="15000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-value">15 000 ₽</span>
+              <span class="cert-desc">Номинальный сертификат</span>
+            </div>
+            <div class="cert-option-card" data-value="25000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-value">25 000 ₽</span>
+              <span class="cert-desc">Премиальный сертификат</span>
+            </div>
+          </div>
+          <!-- Custom amount input -->
+          <div class="form-group custom-amount-group" style="margin-top: 15px;">
+            <label for="customAmount">Своя сумма (от 3 000 ₽)</label>
+            <input type="number" id="customAmount" placeholder="Введите сумму в ₽" min="3000">
+            <span class="error-message">Минимальная сумма сертификата — 3 000 ₽</span>
+          </div>
+        </div>
+
+        <!-- Tab Content 2: Service Selection -->
+        <div class="cert-tab-content" id="tab-service">
+          <label class="form-section-label">Выберите SPA-программу</label>
+          <div class="cert-grid cert-grid-service">
+            <div class="cert-option-card" data-value="relax" data-price="4500">
+              <div class="cert-card-bg"></div>
+              <span class="cert-service-name">Массаж Relax</span>
+              <span class="cert-value">4 500 ₽</span>
+            </div>
+            <div class="cert-option-card" data-value="body" data-price="6000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-service-name">SPA-уход за телом</span>
+              <span class="cert-value">6 000 ₽</span>
+            </div>
+            <div class="cert-option-card" data-value="antistress" data-price="4200">
+              <div class="cert-card-bg"></div>
+              <span class="cert-service-name">Антистресс</span>
+              <span class="cert-value">4 200 ₽</span>
+            </div>
+            <div class="cert-option-card" data-value="pair" data-price="12000">
+              <div class="cert-card-bg"></div>
+              <span class="cert-service-name">Программа для двоих</span>
+              <span class="cert-value">12 000 ₽</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Format of Certificate: Digital / Physical -->
+        <div class="form-group">
+          <label class="form-section-label">Формат сертификата</label>
+          <div class="cert-format-wrapper">
+            <label class="cert-format-option active">
+              <input type="radio" name="format" value="digital" checked style="display:none;">
+              <span class="format-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <div class="format-info">
+                <span class="format-title">Электронный</span>
+                <span class="format-desc">Придет на e-mail за 5 минут</span>
+              </div>
+            </label>
+            <label class="cert-format-option">
+              <input type="radio" name="format" value="physical" style="display:none;">
+              <span class="format-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </span>
+              <div class="format-info">
+                <span class="format-title">Физический</span>
+                <span class="format-desc">Золотой конверт с лентой</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- User Information Fields -->
+        <div class="cert-form-fields">
+          <div class="form-group">
+            <label for="certSenderName">Ваше имя</label>
+            <input type="text" id="certSenderName" name="sender_name" required placeholder="Мария" autocomplete="name">
+            <span class="error-message">Пожалуйста, введите ваше имя</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="certSenderPhone">Номер телефона</label>
+              <input type="tel" id="certSenderPhone" name="sender_phone" required placeholder="+7 (999) 000-00-00" autocomplete="tel">
+              <span class="error-message">Введите корректный номер телефона</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="certSenderEmail">E-mail</label>
+              <input type="email" id="certSenderEmail" name="sender_email" required placeholder="example@mail.ru" autocomplete="email">
+              <span class="error-message">Введите корректный e-mail</span>
+            </div>
+          </div>
+
+          <!-- Recipient Name (Optional) -->
+          <div class="form-group">
+            <label for="certRecipientName">Имя получателя (необязательно)</label>
+            <input type="text" id="certRecipientName" name="recipient_name" placeholder="Для кого сертификат">
+          </div>
+
+          <!-- Courier Delivery Address (Shown only when physical is selected) -->
+          <div class="form-group cert-address-group" style="display: none;">
+            <label for="certAddress">Адрес доставки (или «Самовывоз»)</label>
+            <input type="text" id="certAddress" name="address" placeholder="г. Москва, ул. Ленина, д. 1, кв. 5">
+            <span class="error-message">Укажите адрес доставки или напишите «Самовывоз»</span>
+          </div>
+        </div>
+
+        <!-- Summary Order -->
+        <div class="cert-order-summary">
+          <span>Итого к оплате:</span>
+          <strong id="certSummaryTotal">5 000 ₽</strong>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">Оформить сертификат</button>
+      </form>
+
+      <!-- Success Screen inside Modal -->
+      <div class="success-screen" id="certSuccessScreen" aria-hidden="true">
+        <div class="success-icon-wrapper">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="success-title">Заказ оформлен!</h3>
+        <p class="success-text" id="certSuccessMessage">Подарочный сертификат успешно забронирован. Наш администратор свяжется с вами в течение 10 минут по указанному телефону для подтверждения деталей.</p>
+        <button type="button" class="btn btn-primary close-cert-success-btn">Вернуться на сайт</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Service Detail Panel / Popover -->
+  <div class="modal-backdrop" id="serviceDetailModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card detail-card">
+      <button class="modal-close" aria-label="Закрыть подробности">&times;</button>
+      <div class="detail-content-layout">
+        <div class="detail-img-wrapper">
+          <img src="" alt="" id="detailImage" class="detail-image">
+        </div>
+        <div class="detail-info-wrapper">
+          <h2 id="detailTitle" class="detail-title">Название услуги</h2>
+          <div class="detail-meta">
+            <span id="detailDuration" class="detail-meta-item">90 минут</span>
+            <span id="detailPrice" class="detail-meta-item highlight">6 000 ₽</span>
+          </div>
+          <p id="detailFullDesc" class="detail-description">Полное описание процедуры...</p>
+          <div class="detail-bullets">
+            <h4 class="detail-bullets-title">Что входит в ритуал:</h4>
+            <ul id="detailSteps">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          <button class="btn btn-primary open-booking-from-detail">Записаться на этот сеанс</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Lightbox Image Viewer for Atmosphere -->
+  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Закрыть просмотр">&times;</button>
+    <button class="lightbox-prev" aria-label="Предыдущее фото">&#10216;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImage" class="lightbox-img">
+      <p id="lightboxCaption" class="lightbox-caption">Описание фотографии</p>
+    </div>
+    <button class="lightbox-next" aria-label="Следующее фото">&#10217;</button>
+  </div>
+
+  <!-- Leaflet Map Script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
